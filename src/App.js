@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import Create from './components/create.component';
+import Edicao from './components/edicao.component';
 import Consulta from './components/consulta.component';
 
 class App extends Component {
@@ -18,14 +18,14 @@ class App extends Component {
                                     <Link to={'/consulta'} className="nav-link">Consultar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/create'} className="nav-link">Cadastrar</Link>
+                                    <Link to={'/edicao'} className="nav-link">Cadastrar</Link>
                                 </li>
                             </ul>
                         </div>
                     </nav> <br/>
                     <h2>SURITTEC - Cadastro de Clientes</h2> <br/>
                     <Switch>
-                        <Route exact path='/create' component={ Create } />
+                        <Route exact path='/edicao' component={ Edicao } />
                         <Route path='/consulta' component={ Consulta } />
                     </Switch>
                 </div>
