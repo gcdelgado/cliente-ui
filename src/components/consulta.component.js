@@ -32,7 +32,8 @@ export default class Consulta extends Component {
                     <tr>
                         <th>Nome</th>
                         <th>CPF</th>
-                        <th>Logradouro</th>
+                        <th>CEP</th>
+                        <th>Cidade</th>
                         <th colSpan="2">Ação</th>
                     </tr>
                     </thead>

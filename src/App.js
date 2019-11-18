@@ -26,6 +26,7 @@ class App extends Component {
                     <h2>SURITTEC - Cadastro de Clientes</h2> <br/>
                     <Switch>
                         <Route exact path='/edicao' component={ Edicao } />
+                        <Route exact path="/edicao/:id" component={ Edicao } /> } />
                         <Route path='/consulta' component={ Consulta } />
                     </Switch>
                 </div>
