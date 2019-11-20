@@ -22,7 +22,8 @@ export default class Login extends Component {
         AuthService.login(credentials).then(res => {
             console.log(res);
             if (res.status === 200) {
-                localStorage.setItem("userInfo", JSON.stringify(res.data));
+                localStorage.setItem("userToken", JSON.stringify(res.data));
+                localStorage.setItem("userName", this.state.username);
                 window.open('/consulta', '_top');
             } else {
                 this.setState({message: res.data.message});

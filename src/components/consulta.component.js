@@ -54,7 +54,7 @@ export default class Consulta extends Component {
                     </td>
                     <td>
                         <button className="btn btn-danger"
-                                onClick={onClickExcluir.bind(this, obj.id)}>Excluir
+                                onClick={onClickExcluir.bind(this, obj.id)} disabled={AuthService.getUserName() !== "admin"}>Excluir
                         </button>
                     </td>
                 </tr>
@@ -67,7 +67,7 @@ export default class Consulta extends Component {
             <div>
                 <h3 align="center">Clientes</h3>
 
-                <Link to={'/edicao'} className="btn btn-outline-primary">+ Novo</Link>
+                <Link to={'/edicao'} className="btn btn-primary">+ Novo</Link>
 
                 <table className="table table-striped" style={{marginTop: 20}}>
                     <thead>

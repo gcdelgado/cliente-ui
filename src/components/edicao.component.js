@@ -235,7 +235,6 @@ export default class Edicao extends Component {
 
         return (
             <div style={{marginTop: 10}}>
-                <h3>Adicionar Cliente</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label htmlFor='nome'>Nome *</label>
@@ -360,7 +359,7 @@ export default class Edicao extends Component {
                     </fieldset>
 
                     <div className="form-group">
-                        <input type="submit" value="Salvar" className="btn btn-primary"/>
+                        <input type="submit" value="Salvar" className="btn btn-primary" disabled={AuthService.getUserName() !== "admin"}/>
                     </div>
                 </form>
             </div>

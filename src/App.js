@@ -11,9 +11,9 @@ class App extends Component {
         return (
             <Router>
                 <div className="container">
-                    {localStorage.getItem("userInfo") != null &&
+                    {localStorage.getItem("userToken") != null &&
                     <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div className="collapse navbar-collapse">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item">
                                     <Link to={'/consulta'} className="nav-link">Consultar</Link>
