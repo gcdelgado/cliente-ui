@@ -37,8 +37,6 @@ export default class Login extends Component {
         return (
             <div style={{width: 500}}>
 
-                <h3 align="center">Login</h3>
-
                 <form>
                     <h4 align="center">{this.state.message}</h4>
                     <div className="form-group">
