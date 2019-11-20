@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Edicao from './components/edicao.component';
 import Consulta from './components/consulta.component';
+import Login from "./components/login.component";
 
 class App extends Component {
     render() {
         return (
             <Router>
                 <div className="container">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <Link to={'/'} className="navbar-brand">Clientes</Link>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light" >
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item">
@@ -20,11 +20,15 @@ class App extends Component {
                                 <li className="nav-item">
                                     <Link to={'/edicao'} className="nav-link">Cadastrar</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to={'/'} className="nav-link">Sair</Link>
+                                </li>
                             </ul>
                         </div>
                     </nav> <br/>
                     <h2>SURITTEC - Cadastro de Clientes</h2> <br/>
                     <Switch>
+                        <Route exact path='/' component={ Login } />
                         <Route exact path='/edicao' component={ Edicao } />
                         <Route exact path="/edicao/:id" component={ Edicao } /> } />
                         <Route path='/consulta' component={ Consulta } />

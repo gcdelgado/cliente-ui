@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import InputMask from 'react-input-mask';
+import AuthService from "../service/auth.service";
 
 export default class Edicao extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class Edicao extends Component {
         };
 
         if (this.props.match.params.id) {
-            axios.get('http://localhost:8080/clientes/' + this.props.match.params.id)
+            axios.get('http://localhost:8080/clientes/' + this.props.match.params.id, AuthService.getAuthHeader())
                 .then(
                     res => {
                         console.log(res.data);
@@ -179,7 +180,7 @@ export default class Edicao extends Component {
     }
 
     onClickBuscaCep() {
-        axios.get('http://localhost:8080/enderecos/' + this.state.cep)
+        axios.get('http://localhost:8080/enderecos/' + this.state.cep, AuthService.getAuthHeader())
             .then(
                 res => {
                     console.log(res.data);
@@ -212,7 +213,7 @@ export default class Edicao extends Component {
 
         console.log(obj);
 
-        axios.post('http://localhost:8080/clientes', obj)
+        axios.post('http://localhost:8080/clientes', obj, AuthService.getAuthHeader())
             .then(res => console.log(res.data));
 
         this.setState({
@@ -226,7 +227,8 @@ export default class Edicao extends Component {
             uf: '',
             emails: [{email: ''}],
             telefones: [{numero: '', tipo: ''}]
-        })
+        });
+
     }
 
     render() {
